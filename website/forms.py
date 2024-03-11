@@ -28,3 +28,11 @@ class SignUpForm(UserCreationForm):
         self.fields['password2'].widget.attrs['placeholder'] = 'Confirm Password'
         self.fields['password2'].label = ''
         self.fields['password2'].help_text = '<span class="form-text text-muted"><small>Enter the same password as before, for verification.</small></span>'
+
+
+from .models import Person
+
+class DOBRangeForm(forms.Form):
+    start_date = forms.DateField(label="Start Date (YYYY-MM-DD)")
+    end_date = forms.DateField(label="End Date (YYYY-MM-DD)")
+    
